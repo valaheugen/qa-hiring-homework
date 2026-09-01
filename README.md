@@ -71,12 +71,9 @@ How you design and organize your tests and scenarios is up to you, but at a mini
 - 3 regression tests for functional bugs found during manual testing ( they should fail when run, because the bugs are not fixed yet )
 - A test that generates a test of all possible combinations of the task properties ( importance, label, completeness ) and takes a screenshot of the app after each combination is added.
 
-The test suite must also run in CI. Add **two GitHub Actions workflow files** under `.github/workflows/`:
+The suite must run in CI as well, split into two separate runs — one for e2e and one for visual tests.
 
-- `e2e.yml` — runs the functional / end-to-end tests
-- `visual.yml` — runs the visual (screenshot) tests and uploads the results to **[Argos](https://argos-ci.com)** for visual regression comparison
-
-Use the **[Playwright Test Agents](https://playwright.dev/docs/test-agents)** ( planner / generator / healer ) to write and maintain these tests, or another AI tool of your choice. Whatever you use, stay the reviewer — don't let an agent "heal" a test into passing when the app is actually buggy ( those are your 3 regression tests, which are *supposed* to fail ).
+Use the **[Playwright Test Agents](https://playwright.dev/docs/test-agents)** to write and maintain these tests, or another AI tool of your choice. Whatever you use, stay the reviewer — don't let an agent "heal" a test into passing when the app is actually buggy ( those are your 3 regression tests, which are *supposed* to fail ).
 
 ## Steps to follow
 
