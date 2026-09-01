@@ -65,7 +65,7 @@ You will be evaluated on the quality of the report and the bugs found.
 
 Use **[Playwright](https://playwright.dev)** as the testing framework — it is required so you can drive the AI test agents described below.
 
-Here is what should be covered
+How you design and organize your tests and scenarios is up to you, but at a minimum it must include at least:
 
 - 5 user stories
 - 3 regression tests for functional bugs found during manual testing ( they should fail when run, because the bugs are not fixed yet )
