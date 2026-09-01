@@ -1,4 +1,4 @@
-# Summer 2024 QA Hiring Homework
+# Autumn 2026 QA Hiring Homework
 
 This is a **GitHub template repository** containing a sample React application used to assess the candidate's skills in the QA task. The repo is front-end only.
 
