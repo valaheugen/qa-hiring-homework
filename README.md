@@ -41,7 +41,7 @@ Other requirements are up to the candidate's interpretation - since a lot of the
 
 **This role is AI-first.** In your day-to-day you will spend most of your time working *with* AI tools rather than hand-writing every line, so this homework is designed to see how effectively you drive them. We expect you to use AI coding agents throughout — for exploring the app, drafting the bug report, and especially for generating and maintaining the automated tests.
 
-The tool we lean on most heavily for E2E is **[Playwright Test Agents](https://playwright.dev/docs/test-agents)** — a set of AI agents that plan, generate, and self-heal Playwright tests. You are free to use whichever AI assistant you prefer to drive them (Claude Code, VS Code + Copilot, Codex, opencode, etc.).
+For the automated tests we recommend using **[Playwright Test Agents](https://playwright.dev/docs/test-agents)** — AI agents that plan, generate, and self-heal Playwright tests — but you are free to use any other AI assistant you prefer.
 
 We care far more about **how you steer, review, and validate the AI's output** than about whether you can type Playwright syntax from memory. Blindly committing AI output that doesn't run — or that tests the wrong thing — is a red flag. Be ready to explain, in your PR description or the interview, *why* your tests look the way they do and how you verified them.
 
@@ -76,32 +76,7 @@ The test suite must also run in CI. Add **two GitHub Actions workflow files** un
 - `e2e.yml` — runs the functional / end-to-end tests
 - `visual.yml` — runs the visual (screenshot) tests and uploads the results to **[Argos](https://argos-ci.com)** for visual regression comparison
 
-### Working with Playwright Test Agents
-
-Playwright ships three AI agents you are expected to use — read the docs first: https://playwright.dev/docs/test-agents
-
-- 🎭 **Planner** — explores the app and produces a human-readable Markdown test plan of scenarios and user flows.
-- 🎭 **Generator** — turns a Markdown plan into executable Playwright test files, verifying selectors and assertions live as it goes.
-- 🎭 **Healer** — runs the suite and automatically repairs failing tests by replaying steps, inspecting the UI, and re-running until they pass.
-
-**Set up the agents** for your AI tool of choice ( pick the loop that matches it ):
-
-```bash
-# one of: vscode | claude | codex | opencode
-npx playwright init-agents --loop=claude
-```
-
-This generates the agent definitions ( under `.github/` ) that your AI assistant uses to run the planner / generator / healer.
-
-**Suggested workflow:**
-
-1. Create a **seed test** ( e.g. `tests/seed.spec.ts` ) that establishes the app's base state.
-2. Prompt the **🎭 Planner** to explore the app and produce a Markdown plan under `specs/` ( share the product requirements above as context ).
-3. Prompt the **🎭 Generator**, pointing it at the Markdown plan, to produce the Playwright test files.
-4. Run the tests, and use the **🎭 Healer** to fix any failures — but **review every fix**; do not let it "heal" a test into passing when the app is actually buggy ( those are your 3 regression tests, which are *supposed* to fail ).
-5. Commit the plan ( `specs/` ), the generated tests ( `tests/` ), and the agent definitions so we can see how you worked.
-
-> Keep the AI in the loop, but stay the reviewer. We want to see your prompts, your plans, and your judgment about what the agents produced.
+Use the **[Playwright Test Agents](https://playwright.dev/docs/test-agents)** ( planner / generator / healer ) to write and maintain these tests, or another AI tool of your choice. Whatever you use, stay the reviewer — don't let an agent "heal" a test into passing when the app is actually buggy ( those are your 3 regression tests, which are *supposed* to fail ).
 
 ## Steps to follow
 
@@ -112,13 +87,11 @@ This generates the agent definitions ( under `.github/` ) that your AI assistant
 5. Run the app using `npm run dev`, http://localhost:5173/
 6. Start testing the app
 7. Write the bug report based on findings and commit it in the root folder
-8. Install Playwright `npm init playwright@latest`
-9. Set up the Playwright test agents for your AI tool `npx playwright init-agents --loop=<claude|vscode|codex|opencode>`
-10. Use the planner / generator / healer agents to write and maintain the automated tests
-11. Add two CI workflow ( `.yml` ) files in `.github/workflows/` — one for the e2e tests and one for the visual tests ( Argos )
-12. Commit the tests, plans, agent definitions and workflows to the project
-13. Push the changes to your repository on a new branch
-14. Open a PR to the main branch of your repository — in the description, briefly explain how you used the AI agents and how you validated their output
-15. Add the reviewer as a reviewer to the PR
+8. Set up Playwright and write the automated tests using the Playwright Test Agents ( or another AI tool of your choice )
+9. Add two CI workflow ( `.yml` ) files in `.github/workflows/` — one for the e2e tests and one for the visual tests ( Argos )
+10. Commit the tests, plans, agent definitions and workflows to the project
+11. Push the changes to your repository on a new branch
+12. Open a PR to the main branch of your repository — in the description, briefly explain how you used the AI agents and how you validated their output
+13. Add the reviewer as a reviewer to the PR
 
 If you have any questions, feel free to open an issue in your own private repository ( so other candidates don't see the questions ) and I'll do my best to answer them ASAP.
