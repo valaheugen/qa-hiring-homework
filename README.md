@@ -88,7 +88,7 @@ Use the **[Playwright Test Agents](https://playwright.dev/docs/test-agents)** ( 
 6. Start testing the app
 7. Write the bug report based on findings and commit it in the root folder
 8. Set up Playwright and write the automated tests using the Playwright Test Agents ( or another AI tool of your choice )
-9. Add two CI workflow ( `.yml` ) files in `.github/workflows/` — one for the e2e tests and one for the visual tests ( Argos )
+9. Add two CI workflows — one for the e2e tests and one for the visual tests ( Argos tool )
 10. Commit the tests, plans, agent definitions and workflows to the project
 11. Push the changes to your repository on a new branch
 12. Open a PR to the main branch of your repository — in the description, briefly explain how you used the AI agents and how you validated their output
