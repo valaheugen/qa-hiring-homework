@@ -47,7 +47,7 @@ We care far more about **how you steer, review, and validate the AI's output** t
 
 ## Homework
 
-The position is highly focused on automation ( around 90% ), but sometimes manual testing is inevitable - especially when trying to move things along and validate small fixes for deploys - that's why we expect candidates to be proficient in both. The homework is divided into two parts:
+The position is highly focused on AI and automation, but sometimes manual testing is inevitable - especially when trying to move things along and validate small fixes for deploys - that's why we expect candidates to be proficient in both. The homework is divided into two parts:
 
 1. Exploratory Testing and Bug Reporting
 2. Automated Testing ( AI-assisted )
