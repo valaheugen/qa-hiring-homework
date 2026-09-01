@@ -1,8 +1,8 @@
 # Autumn 2026 QA Hiring Homework
 
-This is a **GitHub template repository** containing a sample React application used to assess the candidate's skills in the QA task. The repo is front-end only.
+This repository contains a sample React application used to assess the candidate's skills in the QA task. The repo is front-end only.
 
-Create your own copy with the **"Use this template"** button (do **not** fork). This gives you an independent repository, with no link back to this one, that you can set to **private** so other candidates can't see your work.
+**Fork this repository** and work in an isolated copy of your own. Forking gives you your own independent copy of the repo where you can commit, branch, and push freely without affecting the original or other candidates' work. Each candidate works only in their own fork, so your work stays private to you.
 
 ## The Sample App
 
@@ -68,19 +68,19 @@ The test suite must also run in CI. Add **two GitHub Actions workflow files** un
 
 ## Steps to follow
 
-1. Click **"Use this template" → Create a new repository** and make it **private** ( do not fork ) - https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template
-2. Invite the reviewer to your repository valaheugen(valaheugen237@gmail.com)
-3. Clone your repository
+1. **Fork** this repository to your own GitHub account - https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo . Your fork is your own isolated copy to work in.
+2. Invite the reviewer to your fork valaheugen(valaheugen237@gmail.com)
+3. Clone your fork
 4. Install the dependencies `npm install`
-5. Run the app using `npm run dev`, http://localhost:5175/
+5. Run the app using `npm run dev`, http://localhost:5173/
 6. Start testing the app
 7. Write the bug report based on findings and commit it in the root folder
 8. Install the testing framework of your choice
 9. Write the automated tests
 10. Add two CI workflow ( `.yml` ) files in `.github/workflows/` — one for the e2e tests and one for the visual tests ( Argos )
 11. Commit the tests and workflows to the project
-12. Push the changes to your repository on a new branch
-13. Open a PR to the main branch
+12. Push the changes to your fork on a new branch
+13. Open a PR to the main branch of your fork
 14. Add the reviewer as a reviewer to the PR
 
-If you have any questions, feel free to open an issue in your private repository ( so other candidates don't see the questions ) and I'll do my best to answer them ASAP.
+If you have any questions, feel free to open an issue in your own fork and I'll do my best to answer them ASAP.
